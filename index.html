@@ -2,623 +2,279 @@
 <html lang="en">
 
 <head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HD5Y18N4W9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-HD5Y18N4W9');
-  </script>
-
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Andres Bolivar</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <link rel="icon" sizes="16x16" type="image/png" href="assets/img/favicon/favicon-16x16.png">
-  <link rel="icon" sizes="32x32" type="image/png" href="assets/img/favicon/favicon-32x32.png">
-  <link rel="icon" sizes="192x192" type="image/png" href="assets/img/favicon/favicon-192x192.png">
-  <link rel="apple-touch-icon" href="assets/img/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Website crafted by Andres Bolivar  https://andresbolivar.me -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andres Bolivar | Engineer & Entrepreneur</title>
+    <meta name="description"
+        content="Personal webpage of Andres Bolivar, Engineer, Entrepreneur, and Co-founder of Dhaki. Building luxury smart-technology solutions.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ionicons for minimal icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
-
-
 <body>
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-  <header id="header" class="d-flex flex-column justify-content-center">
+    <!-- Background Animation Canvas -->
+    <canvas id="bg-canvas"></canvas>
 
-    <nav id="navbar" class="navbar nav-menu">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="fa-solid fa-user"></i> <span>About</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="fa-solid fa-file"></i> <span>Resume</span></a></li>
-        <li><a href="#services" class="nav-link scrollto"><i class="fa-solid fa-server"></i> <span>Services</span></a></li>
-        <li><a href="#contact" class="nav-link scrollto"><i class="fa-solid fa-envelope"></i> <span>Contact</span></a></li>
-      </ul>
-    </nav>
-
-  </header>
-
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Andres Bolivar</h1>
-      <p>I'm <span class="typed" data-typed-items="Professional IT Engineer, DevOps Engineer, Web Developer, Software Engineer, Network Engineer, Site Reliabity Engineer, Cloud Engineer, IT Infrastructure Engineer, Ethical Hacker"></span></p>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/anemboca" class="linkedin" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://www.credly.com/users/andres-bolivar" class="credly" target="_blank"><i class="fa-solid fa-check"></i></a>
-        <a href="https://wa.me/971525673553" class="whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://calendly.com/andres_bolivar/30min" class="calendly" target="_blank"><i class="fa-solid fa-calendar-days"></i></a>
-        <a href="https://github.com/audrum" class="github" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://instagram.com/audrum" class="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://twitter.com/anemboca" class="twitter" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://andresbolivar.bsky.social" class="twitter" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <main id="main">
-
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p class="description">Tech-savvy IT professional with over 15 years of experience delivering impactful results in cloud infrastructure, DevOps, and cybersecurity. Renowned for designing and implementing scalable, secure solutions that drive operational excellence and business continuity. Trusted leader with proven ability to streamline workflows, enhance system reliability, and integrate cutting-edge technologies into dynamic environments. Passionate about aligning technical strategies with organizational objectives to create lasting value and sustainable growth.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/AboutMe.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>DevOps | Cloud & Cybersecurity Engineer | Infrastructure Automation & CI/CD Specialist | Kubernetes & AWS Expert</h3>
-            <p class="fst-italic">
-              If you are looking for a truly experienced engineer to find a solution for your technology needs, that's me!
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor's Degree in Computer Systems Engineering</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><a href="mailto:andresbolivar@proton.me" target="_blank">andresbolivar@proton.me</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><a href="tel:+971525673553" target="_blank">+971 52 567 3553</a></span></li>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Andres Bolivar</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#ventures" class="nav-link">Ventures</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Download CV:</strong> <span><a href="https://drive.google.com/file/d/1ubqVAbTKqfcMlVXPHj48EwKZKlFosg-T/view?usp=share_link" target="_blank">CV Andres Bolivar</a></span></li> 
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Dubai, UAE</span></li>
-                </ul>
-              </div>
-            </div>
-            <p></p>
-            <h3>Professional Certifications</h3>
-            <div class="badge-grid">
-              <div class="divgrid">
-                <a href="https://badges.wes.org/Evidence?i=f670021d-350a-4f95-967d-fd40f900e06e&type=ca" target="_blank" class="badge-1">
-                  <img src="./assets/img/wes-badge.png" alt="Badge issued by World Education Services" class="badges">
-                </a>
-              </div>
-              <div class="divgrid">
-                <a href="https://badges.peoplecert.org/Badge/en/57EFDB66-E475-4545-81ED-03D246AE0E8C" target="_blank" class="badge-2">
-                  <img src="./assets/img/itil-4.png" alt="ITIL 4 Foundation" class="badges">
-                </a>
-              </div>
-              <div class="divgrid">
-                <a href="https://www.credly.com/badges/cd1b5482-6049-477f-b459-dd0d2f5e74bb/public_url" target="_blank" class="badge-2">
-                  <img src="./assets/img/clf-01.png" alt="AWS Cloud Practitioner" class="badges">
-                </a>
-              </div>
-              <div class="divgrid">
-                <a href="https://www.credly.com/badges/3d3dea89-b394-47ae-95dd-1ddc4567630f/public_url" target="_blank" class="badge-2">
-                  <img src="./assets/img/ckad.png" alt="Certified Kubernetes Application Developer" class="badges">
-                </a>
-              </div>
-            </div>
-          </div>
+            </nav>
         </div>
+    </header>
 
-      </div>
+    <!-- Hero Section -->
+    <section class="hero section-padding">
+        <div class="container hero-grid">
+            <div class="hero-content reveal-on-scroll">
+                <span class="section-title">Engineer & Entrepreneur</span>
+                <h1>Crafting technology that elevates everyday life.</h1>
+                <p class="hero-subtitle">Based in Dubai. Blending technical expertise with premium
+                    design to transform how we live.</p>
+                <div class="hero-actions">
+                    <a href="#ventures" class="btn btn-primary">See My Work</a>
+                    <a href="#contact" class="btn btn-outline" style="margin-left: 10px;">Get in Touch</a>
+                </div>
+                <div class="mobile-contact-btn-wrapper">
+                    <a href="assets/contact.vcf" class="btn btn-save-contact" download="Andres_Bolivar.vcf">
+                        <ion-icon name="person-add-outline"></ion-icon> Save Contact
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper reveal-on-scroll">
+                <!-- REPLACE 'assets/profile.jpg' WITH YOUR ACTUAL IMAGE FILE PATH -->
+                <!-- Ensure your image is high quality and square or portrait ratio for best results -->
+                <img src="assets/hero-photo.jpg" alt="Andres Bolivar"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            </div>
+        </div>
     </section>
 
-    <section id="facts" class="facts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Facts</h2>
-          <p>These are not just words, the facts prove it! This is an average of satisfaction through my entire career so far.</p>
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container about-grid">
+            <div class="about-image reveal-on-scroll">
+                <!-- REPLACE WITH YOUR IMAGE: Abstract tech or workspace photo -->
+                <img src="assets/about-me.jpg" alt="About Andres Bolivar">
+            </div>
+            <div class="about-text reveal-on-scroll">
+                <span class="section-title">About Me</span>
+                <h2>Innovation driven by curiosity.</h2>
+                <p>A Colombian engineer and entrepreneur based in Dubai, I focus on creating technology that elevates
+                    everyday living. Innovation should always serve a purpose: to simplify, empower, and improve the
+                    human experience.
+                </p>
+                <p>Working at the intersection of engineering, design, and real-world challenges, I explore technologies
+                    like AI, robotics, and automation to turn complexity into intuitive, seamless solutions.
+                </p>
+                <p>A commitment to continuous learning and thoughtful design guides my work. The aim is to build
+                    solutions that are functional, meaningful, and impactful.</p>
+            </div>
         </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1500" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours of Support</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="3000" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Training hours</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
     </section>
 
-    <section id="skills" class="skills section-bg">
-      <div class="container" data-aos="fade-up">
+    <!-- Ventures Section -->
+    <section id="ventures" class="section-padding">
+        <div class="container">
+            <div class="text-center reveal-on-scroll" style="max-width: 700px; margin: 0 auto var(--spacing-lg);">
+                <span class="section-title">Ventures & Projects</span>
+                <h2>Building the Future</h2>
+                <p style="color: var(--color-text-secondary);">A collection of my work in smart automation, luxury tech,
+                    and software engineering.</p>
+            </div>
 
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>What is a successful professional without skills? Thanks to the many projects and positions I have worked on, I have gained relevant expertise and knowledge on many computer systems engineering fields.</p>
+            <div class="ventures-grid">
+                <!-- Dhaki Card -->
+                <article class="venture-card reveal-on-scroll">
+                    <div class="venture-header">
+                        <div class="venture-icon">
+                            <!-- <ion-icon name="home-outline"></ion-icon> -->
+                            <img src="assets/dhaki-logo.png" alt="Dhaki Logo">
+                        </div>
+                        <span class="venture-tag">Co-Founder</span>
+                    </div>
+                    <h3>Dhaki</h3>
+                    <p>A luxury smart-automation company shaping the future of modern living. Dhaki creates seamless,
+                        intelligent environments where technology and refined design elevate comfort, security, and the
+                        way people experience their spaces.</p>
+                    <a href="https://dhaki.ai" target="_blank" class="btn-link"
+                        style="color: var(--color-accent); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 4px;">
+                        Visit Dhaki <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </article>
+
+                <!-- Future Project Placeholder 1 -->
+                <!-- <article class="venture-card reveal-on-scroll" style="opacity: 0.8;">
+                    <div class="venture-header">
+                        <div class="venture-icon">
+                            <ion-icon name="hardware-chip-outline"></ion-icon>
+                        </div>
+                        <span class="venture-tag">Coming Soon</span>
+                    </div>
+                    <h3>Project Nexus</h3>
+                    <p>Exploring the intersection of AI and personal robotics. A new initiative to bring autonomous
+                        assistance into the daily workflow of creatives.</p>
+                </article> -->
+
+                <!-- Future Project Placeholder 2 -->
+                <!-- <article class="venture-card reveal-on-scroll" style="opacity: 0.8;">
+                    <div class="venture-header">
+                        <div class="venture-icon">
+                            <ion-icon name="pulse-outline"></ion-icon>
+                        </div>
+                        <span class="venture-tag">Concept</span>
+                    </div>
+                    <h3>BioSync</h3>
+                    <p>Data-driven health integration platform. Leveraging wearable data to provide actionable insights
+                        for peak physical and mental performance.</p>
+                </article> -->
+
+                <!-- More Coming Soon Card -->
+                <article class="venture-card reveal-on-scroll"
+                    style="border: 1px dashed var(--color-text-secondary); background: transparent; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 250px;">
+                    <div class="venture-icon"
+                        style="background: transparent; color: var(--color-text-secondary); font-size: 2rem; margin-bottom: var(--spacing-sm);">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                    </div>
+                    <h3 style="color: var(--color-text-secondary);">More to Come</h3>
+                    <p style="font-size: 0.9rem; max-width: 80%;">I am constantly exploring new ideas or listening to
+                        porposals. Stay tuned for
+                        upcoming ventures.</p>
+                </article>
+            </div>
         </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">Network and Infrastructure<i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Linux (Desktop and Server)<i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Python <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Windows (Desktop and Server) <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">IaaS, PaaS, SaaS (Cloud Solutions)<i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">Cibersecurity <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Docker and Kubernetes<i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Scripting (Bash/PowerShell) <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Automation (Ansible, Puppet, Chef) <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">CD/CI & Pipelines (Software Engineering)<i class="val">65%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
     </section>
 
-    <section id="resume" class="resume">
-      <div class="container" data-aos="fade-up">
+    <!-- Skills & Expertise Section -->
+    <section id="skills" class="section-padding" style="background: var(--color-bg-secondary);">
+        <div class="container">
+            <div class="text-center reveal-on-scroll"
+                style="margin-bottom: var(--spacing-lg); max-width: 800px; margin-left: auto; margin-right: auto;">
+                <span class="section-title">Skills & Expertise</span>
+                <h2>Designing systems at the intersection of engineering, automation, and user experience.</h2>
+            </div>
 
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>A little bit of information about myself and my professional background along all of these years of expertise.</p>
+            <div class="skills-grid">
+                <!-- 1. AI & Automation -->
+                <article class="skill-card reveal-on-scroll">
+                    <div class="skill-icon">
+                        <ion-icon name="aperture-outline"></ion-icon>
+                    </div>
+                    <h3>AI & Automation</h3>
+                    <p>Building intelligent systems that automate routines, surface insights, and reduce friction in
+                        daily life.</p>
+                </article>
+
+                <!-- 2. Smart Home & IoT -->
+                <article class="skill-card reveal-on-scroll">
+                    <div class="skill-icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </div>
+                    <h3>Smart Home & IoT Architecture</h3>
+                    <p>Designing connected environments that integrate devices, sensors, and platforms into a single,
+                        intuitive experience.</p>
+                </article>
+
+                <!-- 3. Systems Engineering -->
+                <article class="skill-card reveal-on-scroll">
+                    <div class="skill-icon">
+                        <ion-icon name="layers-outline"></ion-icon>
+                    </div>
+                    <h3>Systems Engineering</h3>
+                    <p>Structuring complex technical problems into clear, scalable architectures with reliability as a
+                        first principle.</p>
+                </article>
+
+                <!-- 4. Cloud & Infrastructure -->
+                <article class="skill-card reveal-on-scroll">
+                    <div class="skill-icon">
+                        <ion-icon name="cloud-outline"></ion-icon>
+                    </div>
+                    <h3>Cloud & Infrastructure</h3>
+                    <p>Leveraging modern cloud platforms and services to deliver secure, resilient, and flexible
+                        solutions.</p>
+                </article>
+
+                <!-- 5. Cybersecurity -->
+                <article class="skill-card reveal-on-scroll">
+                    <div class="skill-icon">
+                        <ion-icon name="shield-checkmark-outline"></ion-icon>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Applying advanced security practices to protect environments end to end. Experience spans
+                        penetration testing, threat detection, and defensive hardening.</p>
+                </article>
+
+                <!-- 6. Technical Leadership -->
+                <article class="skill-card reveal-on-scroll">
+                    <div class="skill-icon">
+                        <ion-icon name="compass-outline"></ion-icon>
+                    </div>
+                    <h3>Technical Leadership</h3>
+                    <p>Shaping vision, setting standards, and aligning people, process, and technology around meaningful
+                        outcomes.</p>
+                </article>
+            </div>
         </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Andres Bolivar</h4>
-              <p><em>“Innovative and professional engineer driven by solutions, constantly learning and working with cutting-edge technologies to enhance people’s lives and help companies save money while achieving their goals.</em></p>
-              <ul>
-                <li>Dubai, United Arab Emirates</li>
-                <li><a href="tel:+971525673553" target="_blank">(+971) 052 567 3553</a></li>
-                <li><a href="mailto:andresbolivar@proton.me" target="_blank">andresbolivar@proton.me</a></li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Science in Computer Systems Engineering</h4>
-              <h5>2013 - 2018</h5>
-              <p><em>Corporación Unificada Nacional de Educación Superior- CUN, Bogotá, Colombia</em></p>
-              <p>Science in Computer System Engineering, diploma under request.</p>
-            </div>
-            <div class="resume-item">
-              <h4>CISCO CCNA Routing and Switching (Course)</h4>
-              <h5>2019 - 2020</h5>
-              <p><em>Corporación Unificada Nacional de Educación Superior- CUN, Bogotá, Colombia</em></p>
-              <p>CCNA 1:Routing and switching essentials, CCNA 2: introduction to networks, CCNA 3:Scaling Networks and CCNA 4: Connecting Networks</p>
-            </div>
-            <div class="resume-item">
-              <h4>Ethical hacking</h4>
-              <h5>2016</h5>
-              <p><em>DSTeam seguridad</em></p>
-              <p>Certified Offensive and Defensive Security Professional.</p>
-            </div>
-            <div class="resume-item">
-              <h4>Mobile apps development</h4>
-              <h5>2016</h5>
-              <p><em>Universidad Complutense de Madrid</em></p>
-              <p>Basic concepts about mobile apps development.</p>
-            </div>
-            <div class="resume-item">
-              <h4>Web development</h4>
-              <h5>2016</h5>
-              <p><em>Google Activate</em></p>
-              <p>HTML5, CSS3 and other technologies for web development.</p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Senior DevOps Engineer</h4>
-              <h5>December 2022 - Current</h5>
-              <p><em>Confidential - Dubai, UAE</em></p>
-              <ul>
-                <li>Design and implement automated infrastructure solutions using Ansible, Terraform, and Python, streamlining deployments and achieving improvement in operational efficiency.</li>
-                <li>Administer and optimize Linux-based systems, ensuring high availability, system reliability, and adherence to cybersecurity best practices.</li>
-                <li>Build, maintain, and enhance CI/CD pipelines to enable seamless integration, automated testing, and reliable delivery of releases, reducing deployment time.</li>
-                <li>Containerization and Orchestration</li>
-                <li>Develop scalable containerized solutions using Docker and Kubernetes, enabling efficient orchestration, resource utilization, and system performance.</li>
-                <li>Integrate robust security practices into development and operational workflows, including compliance configurations and vulnerability assessments to mitigate risks and ensure system integrity.</li>
-                <li>Collaborate with cross-functional teams to manage complex projects, deliver cloud-based solutions, and support infrastructure scalability.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>CloudOps Engineer</h4>
-              <h5>September 2021 - October 2024</h5>
-              <p><em><a href="https://www.fortra.com" target="_blank">Fortra</a>, Remote </em></p>
-              <ul>
-                <li>Configured and managed cloud infrastructure on Amazon Web Services (AWS), deploying scalable and secure solutions, optimizing performance, and maintaining compliance with organizational and industry standards.</li>
-                <li>Built, containerized, and deployed applications using Docker to streamline development workflows, reduce environment inconsistencies, and enhance application portability.</li>
-                <li>Administered and maintained CI/CD pipelines to ensure smooth integration, automated testing, and efficient delivery of high-quality software releases, leveraging Python for scripting and automation tasks.</li>
-                <li>Conducted cybersecurity checks and implemented compliance configurations during software releases, adhering to security protocols and best practices while utilizing Jira and Git for project management and version control.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Professional Services Engineer</h4>
-              <h5>September 2019 - August 2021</h5>
-              <p><em><a href="https://www.sutherlandglobal.com" target="_blank">Sutherland Global Services</a>, Remote</em></p>
-              <ul>
-                <li>Configured and administered servers to ensure optimal performance, secure operations, and seamless integration with enterprise systems, supporting critical business functions.</li>
-                <li>Managed user accounts and permissions across multiple environments, ensuring compliance with access control policies and enhancing security measures through effective privilege management.</li>
-                <li>Automated routine operational tasks and workflows using Python and PowerShell scripting, improving efficiency and reducing manual intervention in system administration processes.</li>
-                <li>Administered and optimized databases to support high availability and scalability requirements, while troubleshooting and resolving network-related issues to maintain uninterrupted connectivity.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>IT & Cibersecurity Manager</h4>
-              <h5>February 2018 - August 2019</h5>
-              <p><em><a href="https://en.hotelescosmos.com" target="_blank">Cosmos Hotels</a>, Bogotá, Colombia</em></p>
-              <ul>
-                <li>Led administration and troubleshooting of enterprise-wide networks, ensuring secure connectivity across Linux and Windows server environments</li>
-                <li>Implemented and maintained robust cybersecurity measures, overseeing threat management, vulnerability assessments, and compliance with security protocols to safeguard critical infrastructure.</li>
-                <li>Managed cloud-based solutions and infrastructure as code (IaC) deployments, enabling scalable, automated provisioning and efficient resource utilization for organizational projects.</li>
-                <li>Administered and optimized Office 365 solutions, streamlining collaboration, enhancing productivity, and supporting integration with existing IT systems.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>IT Manager</h4>
-              <h5>August 2017 - December 2017</h5>
-              <p><em><a href="https://www.habitelhotels.com" target="_blank">Hotel Habitel</a>, Bogotá, Colombia</em></p>
-              <ul>
-                <li>Directed team of IT professionals to maintain and enhance network infrastructure, ensuring secure, reliable operations and minimizing downtime through effective troubleshooting and proactive maintenance.</li>
-                <li>Oversaw system administration and IT infrastructure management for Linux and Windows servers, optimizing performance, security, and scalability to support organizational growth.</li>
-                <li>Administered databases and implemented cybersecurity measures, including threat monitoring and risk mitigation, to protect sensitive information and maintain regulatory compliance.</li>
-                <li>Managed IT projects from initiation to completion, coordinating cross-functional teams, allocating resources, and delivering solutions aligned with business objectives on time and within budget.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>IT Coordinator</h4>
-              <h5>February 2015 - May 2017</h5>
-              <p><em><a href="https://en.ghlhoteles.com" target="_blank">GHL Hotels</a>, Bogotá, Colombia</em></p>
-              <ul>
-                <li>Helpdesk administrator</li>
-                <li>IT infrastructure engineer</li>
-                <li>Linux and Windows server administration</li>
-                <li>IT team leader</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Technical Support</h4>
-              <h5>February 2014 - January 2015</h5>
-              <p><em><a href="https://rss.com.co/" target="_blank">Redes, Servicios y Soportes</a>, Bogotá, Colombia</em></p>
-              <ul>
-                <li>Network administration</li>
-                <li>Helpdesk</li>
-                <li>Servers administration</li>
-                <li>Troubleshooting</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Technical Support Agent</h4>
-              <h5>April 2012 - October 2013</h5>
-              <p><em><a href="https://etb.com/" target="_blank">ETB</a>, Bogotá, Colombia</em></p>
-              <ul>
-                <li>Remote technical support</li>
-                <li>Call center agent</li>
-                <li>Customer service</li>
-                <li>Troubleshooting</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Freelance Information Technology Consultant</h4>
-              <h5>January 2010 - March 2012</h5>
-              <p><em>Freelance, Bogotá, Colombia</em></p>
-              <ul>
-                <li>Hardware and software consultant</li>
-                <li>Technical support</li>
-                <li>Network administration</li>
-                <li>Servers administration</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </section>
 
-    <section id="services" class="services">
-      <div class="container" data-aos="fade-up">
+    <!-- Contact & Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content reveal-on-scroll">
+                <div>
+                    <h2>Let's build something<br>extraordinary.</h2>
+                    <p style="color: rgba(255,255,255,0.7); max-width: 400px; margin-bottom: var(--spacing-md);">
+                        Always open to discussing new ideas, partnerships, or just chatting about the future of tech.
+                    </p>
+                    <a href="mailto:andresbolivar@proton.me" class="btn btn-primary"
+                        style="background: white; color: var(--color-text-primary);">Email Me</a>
+                    <a href="assets/contact.vcf" class="btn btn-primary footer-mobile-save-contact"
+                        download="Andres_Bolivar.vcf"
+                        style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: white; margin-left: 10px; display: none;">Save
+                        Contact</a>
+                </div>
+                <div style="align-self: center;">
+                    <span class="section-title" style="color: rgba(255,255,255,0.5);">Connect</span>
+                    <div class="social-links">
+                        <!-- Direct Contact Badges -->
+                        <a href="https://wa.me/971525673553" target="_blank" class="social-link whatsapp"
+                            title="WhatsApp"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                        <a href="https://t.me/audrum" target="_blank" class="social-link telegram"
+                            title="Telegram"><ion-icon name="paper-plane-outline"></ion-icon></a>
+                        <a href="https://instagram.com/audrum" target="_blank" class="social-link instagram"
+                            title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
 
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>I offer a variety of professional IT solutions for all kind of needs either for companies or personal purposes, if you don't find here what you are looking for just contact me.</menu>.</p>
+                        <!-- Professional -->
+                        <a href="https://linkedin.com/in/anemboca" target="_blank" class="social-link linkedin"
+                            title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+                        <a href="https://github.com/audrum" target="_blank" class="social-link github"
+                            title="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> Andres Bolivar. All rights reserved.</p>
+                <p style="font-size: 0.8rem; opacity: 0.5;">Designed with precision.</p>
+            </div>
         </div>
+    </footer>
 
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg>
-                <i class="bx bx-shape-polygon"></i>
-              </div>
-              <h4>Network Engineering</h4>
-              <p>Network administration, LAN, WAN, routing protocols, structured cabling, VLAN, Wi-Fi solutions, among others.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
-                </svg>
-                <i class="bx bx-shield-quarter"></i>
-              </div>
-              <h4>Cibersecurity</h4>
-              <p>Offensive and Defensive cibersecurity methodologies, ethical hacking, hardening, perimeter security, trainings, NG firewalls, antivirus, etc.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-pink">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"></path>
-                </svg>
-                <i class="bx bx-cloud"></i>
-              </div>
-              <h4>Cloud</h4>
-              <p>Most of the cloud services & solutions mainly based on Amazon Web Services platform. Everything realted with IaaS, PaaS and SaaS.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-yellow">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"></path>
-                </svg>
-                <i class="bx bx-code-alt"></i>
-              </div>
-              <h4>Coding</h4>
-              <p>Development and scripting using bash, PowerShell and Python.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-red">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>
-                </svg>
-                <i class="bx bx-laptop"></i>
-              </div>
-              <h4>Remote Solutions</h4>
-              <p>Wherever you are if you have an internet connection and need my services, you can contact me and I will hep you.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-teal">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"></path>
-                </svg>
-                <i class="bx bx-wrench"></i>
-              </div>
-              <h4>troubleshooting</h4>
-              <p>Whatever is the technology issue or need you are facing, just contact me and I will for sure find a solution for you.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-
-        <div class="row mt-1">
-
-          <div class="col-lg-4">
-            <div class="info">
-
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Dubai, United Arab Emirates</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p><a href="tel:+971525673553">+971 52 567 3553</a></p>
-              </div>
-            
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p><a href="mailto:andresbolivar@proton.me">andresbolivar@proton.me</a></p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-4" style="justify-content: center; display: flex;">
-
-              <img src="assets/img/andres-qr-code.svg" class="img-fluid" style="max-width: 70%;">
-
-          </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer id="footer">
-    <div class="container">
-      <h3>Andres Bolivar</h3>
-      <p>Making people's life better using solutions based in knowledge, engineering and technology.</p>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/anemboca" class="linkedin" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://www.credly.com/users/andres-bolivar" class="credly" target="_blank"><i class="fa-solid fa-check"></i></a>
-        <a href="https://wa.me/971525673553" class="whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://github.com/audrum" class="github" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://instagram.com/audrum" class="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://twitter.com/anemboca" class="twitter" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://andresbolivar.bsky.social" class="twitter" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>Andres Bolivar</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Made by <a href="https://audrum.github.io/">Andres Bolivar</a>
-      </div>
-    </div>
-  </footer>
-
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
-  <script src="assets/js/main.js"></script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

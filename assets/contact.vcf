@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Andres Bolivar
+N:Bolivar;Andres;;;
+TEL;TYPE=CELL:+971525673553
+EMAIL;TYPE=MOBILE:andresbolivar@proton.me
+URL:https://andresbolivar.me
+URL;type=LinkedIn:https://linkedin.com/in/anemboca
+URL;type=GitHub:https://github.com/audrum
+NOTE:Co-founder of Dhaki. Building luxury smart-technology solutions.
+END:VCARD
