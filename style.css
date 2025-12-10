@@ -191,6 +191,15 @@ img {
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: -0.03em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 32px;
+    /* Adjust based on logo aspect ratio */
+    width: auto;
 }
 
 .nav-links {
