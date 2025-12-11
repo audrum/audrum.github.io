@@ -157,4 +157,43 @@ document.addEventListener('DOMContentLoaded', () => {
         resize();
         animate();
     }
+
+    // --- Content Protection ---
+
+    // 1. Disable Right-Click Context Menu
+    document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // 2. Disable Image Dragging
+    document.addEventListener('dragstart', (e) => {
+        if (e.target.nodeName === 'IMG') {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // 3. Disable Developer Tools Shortcuts and Source View
+    document.addEventListener('keydown', (e) => {
+        // Prevent F12
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+
+        // Prevent Ctrl+Shift+I (DevTools), Ctrl+Shift+J (Console), Ctrl+Shift+C (Inspect), Ctrl+U (View Source)
+        // Mac: Cmd+Option+I, Cmd+Option+J, Cmd+Option+C, Cmd+Option+U (Chrome/Safari mostly use Option instead of Shift, but we catch generic combinations)
+        if (e.metaKey || e.ctrlKey) {
+            switch (e.key.toLowerCase()) {
+                case 'i': // Inspect
+                case 'j': // Console
+                case 'c': // Inspect Element
+                case 'u': // View Source
+                case 's': // Save Page
+                    e.preventDefault();
+                    return false;
+            }
+        }
+    });
 });

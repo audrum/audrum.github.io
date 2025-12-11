@@ -59,6 +59,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    /* Protection: Prevent text selection and image dragging highlighting */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    /* Protection: Prevent long-press context menu on mobile (iOS/Android) */
+    -webkit-touch-callout: none;
+}
+
+/* Allow selection on input fields if any were present (none currently, but good practice) */
+input,
+textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 html {
