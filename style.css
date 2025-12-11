@@ -674,6 +674,38 @@ img {
     }
 
     .footer-mobile-save-contact {
-        display: inline-block !important;
+        display: inline-flex !important;
+        /* using inline-flex for better alignment */
+        width: 100%;
+        /* Full width on mobile to match other buttons */
+        justify-content: center;
+        margin-left: 0 !important;
+        /* Reset margin */
+        margin-top: 10px;
+        /* Space between buttons */
+    }
+
+    /* Ensure Email Me button is also full width */
+    .footer .btn {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    /* Header Mobile Adjustments */
+    .main-header {
+        height: auto;
+        /* Allow height to expand */
+        padding: 15px 0;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        font-size: 0.85rem;
     }
 }
