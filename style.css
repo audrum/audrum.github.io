@@ -708,4 +708,9 @@ img {
         gap: 20px;
         font-size: 0.85rem;
     }
+
+    .hero {
+        padding-top: 140px;
+        /* Increased padding to account for stacked header */
+    }
 }

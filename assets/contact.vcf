@@ -1,8 +1,9 @@
 BEGIN:VCARD
 VERSION:3.0
-FN:Andres Bolivar
 N:Bolivar;Andres;;;
-TEL;TYPE=CELL:+971525673553
-EMAIL;TYPE=MOBILE:andresbolivar@proton.me
+FN:Andres Bolivar
+TITLE:Engineer & Entrepreneur
+TEL;TYPE=CELL;TYPE=VOICE:+971525673553
+EMAIL;TYPE=INTERNET;TYPE=WORK:andresbolivar@proton.me
 URL:https://andresbolivar.me
 END:VCARD
