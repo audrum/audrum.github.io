@@ -44,77 +44,169 @@
     <section class="section-padding" style="min-height: 80vh; padding-top: 140px;">
         <div class="container reveal-on-scroll">
             <div class="text-center" style="max-width: 800px; margin: 0 auto;">
-                <span class="section-title">Manifesto</span>
-                <h1 style="margin-bottom: var(--spacing-lg);">The Restless Hacker</h1>
 
-                <div class="manifesto-content"
-                    style="text-align: left; font-size: 1.15rem; line-height: 1.8; color: var(--color-text-primary);">
-                    <p style="margin-bottom: var(--spacing-md);">
-                        I am driven by curiosity.<br>
-                        Not as a habit, but as a system.<br>
-                        If something cannot be explored, tested, or improved, it does not hold my attention for long.
-                    </p>
+                <!-- Language Toggle -->
+                <div class="lang-toggle-wrapper"
+                    style="margin-bottom: var(--spacing-md); display: flex; justify-content: flex-end;">
+                    <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+                    <span class="lang-divider">/</span>
+                    <button class="lang-btn" onclick="switchLang('es')">ES</button>
+                </div>
 
-                    <p style="margin-bottom: var(--spacing-md);">
-                        I question how things work, why they exist, and whether they deserve to remain the same.<br>
-                        Progress begins with discomfort, and I am comfortable there.
-                    </p>
+                <!-- English Content -->
+                <div id="manifesto-en">
+                    <span class="section-title">Manifesto</span>
+                    <h1 style="margin-bottom: var(--spacing-lg);">The Restless Hacker</h1>
 
-                    <p style="margin-bottom: var(--spacing-md);">
-                        I am a hacker by mindset.<br>
-                        Not to bypass rules, but to understand systems deeply enough to redesign them.<br>
-                        Technology, to me, is not an accessory. It is an extension of human capability.
-                    </p>
+                    <div class="manifesto-content"
+                        style="text-align: left; font-size: 1.15rem; line-height: 1.8; color: var(--color-text-primary);">
+                        <p style="margin-bottom: var(--spacing-md);">
+                            I am driven by curiosity.<br>
+                            Not as a habit, but as a system.<br>
+                            If something cannot be explored, tested, or improved, it does not hold my attention for
+                            long.
+                        </p>
 
-                    <p style="margin-bottom: var(--spacing-md);">
-                        I build because ideas without execution are incomplete.<br>
-                        Entrepreneurship is how I turn intention into reality.<br>
-                        Iteration is not failure. Stagnation is.
-                    </p>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            I question how things work, why they exist, and whether they deserve to remain the same.<br>
+                            Progress begins with discomfort, and I am comfortable there.
+                        </p>
 
-                    <p style="margin-bottom: var(--spacing-md);">
-                        I value quality in every dimension.<br>
-                        In products, in design, in security, in experiences, and in people.<br>
-                        Luxury, for me, is not excess. It is intelligence, precision, and purpose.
-                    </p>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            I am a hacker by mindset.<br>
+                            Not to bypass rules, but to understand systems deeply enough to redesign them.<br>
+                            Technology, to me, is not an accessory. It is an extension of human capability.
+                        </p>
 
-                    <p style="margin-bottom: var(--spacing-md);">
-                        I believe technology should simplify life, not overwhelm it.<br>
-                        Automation should give time back.<br>
-                        Security should be invisible.<br>
-                        Design should feel obvious once experienced.
-                    </p>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            I build because ideas without execution are incomplete.<br>
+                            Entrepreneurship is how I turn intention into reality.<br>
+                            Iteration is not failure. Stagnation is.
+                        </p>
 
-                    <p style="margin-bottom: var(--spacing-md);">
-                        I test everything.<br>
-                        Systems, assumptions, ideas, and myself.<br>
-                        Not to prove superiority, but to uncover truth and potential.
-                    </p>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            I value quality in every dimension.<br>
+                            In products, in design, in security, in experiences, and in people.<br>
+                            Luxury, for me, is not excess. It is intelligence, precision, and purpose.
+                        </p>
 
-                    <p style="margin-bottom: var(--spacing-md);">
-                        I am ambitious because unused potential is waste.<br>
-                        I move fast, but I think deeply.<br>
-                        I challenge norms while respecting fundamentals.
-                    </p>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            I believe technology should simplify life, not overwhelm it.<br>
+                            Automation should give time back.<br>
+                            Security should be invisible.<br>
+                            Design should feel obvious once experienced.
+                        </p>
 
-                    <p style="margin-bottom: var(--spacing-md);">
-                        I am not interested in comfort or permanence.<br>
-                        I am interested in evolution.
-                    </p>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            I test everything.<br>
+                            Systems, assumptions, ideas, and myself.<br>
+                            Not to prove superiority, but to uncover truth and potential.
+                        </p>
 
-                    <p style="margin-bottom: var(--spacing-md);">
-                        If something can be better, it should be.<br>
-                        If something can be smarter, it must be.
-                    </p>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            I am ambitious because unused potential is waste.<br>
+                            I move fast, but I think deeply.<br>
+                            I challenge norms while respecting fundamentals.
+                        </p>
 
-                    <p style="margin-bottom: var(--spacing-lg);">
-                        This is not rebellion.<br>
-                        This is intention.
-                    </p>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            I am not interested in comfort or permanence.<br>
+                            I am interested in evolution.
+                        </p>
 
-                    <p style="font-weight: 700; font-size: 1.25rem;">
-                        And I am just getting started.
-                    </p>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            If something can be better, it should be.<br>
+                            If something can be smarter, it must be.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-lg);">
+                            This is not rebellion.<br>
+                            This is intention.
+                        </p>
+
+                        <p style="font-weight: 700; font-size: 1.25rem;">
+                            And I am just getting started.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Spanish Content -->
+                <div id="manifesto-es" style="display: none;">
+                    <span class="section-title">Manifiesto</span>
+                    <h1 style="margin-bottom: var(--spacing-lg);">El Hacker Inquieto</h1>
+
+                    <div class="manifesto-content"
+                        style="text-align: left; font-size: 1.15rem; line-height: 1.8; color: var(--color-text-primary);">
+                        <p style="margin-bottom: var(--spacing-md);">
+                            Estoy impulsado por la curiosidad.<br>
+                            No como un hábito, sino como un sistema.<br>
+                            Si algo no puede explorarse, probarse o mejorarse, no logra mantener mi atención por mucho
+                            tiempo.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-md);">
+                            Cuestiono cómo funcionan las cosas, por qué existen y si realmente merecen seguir siendo
+                            iguales.<br>
+                            El progreso comienza con la incomodidad, y ahí es donde me siento cómodo.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-md);">
+                            Soy hacker por mentalidad.<br>
+                            No para saltarme reglas, sino para entender los sistemas lo suficientemente a fondo como
+                            para rediseñarlos.<br>
+                            La tecnología, para mí, no es un accesorio. Es una extensión de la capacidad humana.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-md);">
+                            Construyo porque las ideas sin ejecución están incompletas.<br>
+                            El emprendimiento es la forma en que convierto la intención en realidad.<br>
+                            Iterar no es fracasar. Estancarse sí lo es.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-md);">
+                            Valoro la calidad en todas sus dimensiones.<br>
+                            En los productos, en el diseño, en la seguridad, en las experiencias y en las personas.<br>
+                            El lujo, para mí, no es exceso. Es inteligencia, precisión y propósito.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-md);">
+                            Creo que la tecnología debe simplificar la vida, no complicarla.<br>
+                            La automatización debe devolver tiempo.<br>
+                            La seguridad debe ser invisible.<br>
+                            El diseño debe sentirse obvio una vez que se experimenta.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-md);">
+                            Lo pruebo todo.<br>
+                            Sistemas, supuestos, ideas y a mí mismo.<br>
+                            No para demostrar superioridad, sino para descubrir verdad y potencial.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-md);">
+                            Soy ambicioso porque el potencial no utilizado es desperdicio.<br>
+                            Me muevo rápido, pero pienso en profundidad.<br>
+                            Desafío las normas, respetando los fundamentos.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-md);">
+                            No me interesa la comodidad ni la permanencia.<br>
+                            Me interesa la evolución.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-md);">
+                            Si algo puede ser mejor, debería serlo.<br>
+                            Si algo puede ser más inteligente, debe serlo.
+                        </p>
+
+                        <p style="margin-bottom: var(--spacing-lg);">
+                            Esto no es rebeldía.<br>
+                            Es intención.
+                        </p>
+
+                        <p style="font-weight: 700; font-size: 1.25rem;">
+                            Y apenas estoy comenzando.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
