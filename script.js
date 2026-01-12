@@ -196,4 +196,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // --- Language Switcher ---
+    window.switchLang = function (lang) {
+        const enContent = document.getElementById('manifesto-en');
+        const esContent = document.getElementById('manifesto-es');
+
+        // Buttons
+        const btns = document.querySelectorAll('.lang-btn');
+        btns.forEach(btn => {
+            if (btn.textContent.trim().toLowerCase() === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // Content
+        if (lang === 'en') {
+            if (enContent) enContent.style.display = 'block';
+            if (esContent) esContent.style.display = 'none';
+        } else if (lang === 'es') {
+            if (enContent) enContent.style.display = 'none';
+            if (esContent) esContent.style.display = 'block';
+        }
+
+        // Update URL
+        const url = new URL(window.location);
+        url.searchParams.set('lang', lang);
+        window.history.replaceState({}, '', url);
+    };
+
+    // Initialize Language from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    if (langParam && (langParam === 'en' || langParam === 'es')) {
+        switchLang(langParam);
+    }
 });
+

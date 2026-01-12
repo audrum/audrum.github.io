@@ -162,6 +162,40 @@ img {
     color: white;
 }
 
+/* Language Toggle */
+.lang-toggle-wrapper {
+    display: flex;
+    /* Changed from inline-flex to allow full width alignment control if needed, though HTML inline style handles it */
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: 2px 4px;
+    transition: var(--transition-fast);
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+.lang-btn:hover {
+    color: var(--color-text-primary);
+}
+
+.lang-btn.active {
+    color: var(--color-accent);
+}
+
+.lang-divider {
+    color: var(--color-text-secondary);
+    opacity: 0.5;
+}
+
 .section-padding {
     padding: var(--spacing-xl) 0;
 }
