@@ -199,8 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Language Switcher ---
     window.switchLang = function (lang) {
-        const enContent = document.getElementById('manifesto-en');
-        const esContent = document.getElementById('manifesto-es');
+        const enContent = document.getElementById('philosophy-en');
+        const esContent = document.getElementById('philosophy-es');
 
         // Buttons
         const btns = document.querySelectorAll('.lang-btn');
