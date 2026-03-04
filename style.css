@@ -871,6 +871,19 @@ img {
     color: #FF6B6B;
 }
 
+.cli-output .cli-line-link a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    transition: color 0.15s ease;
+}
+
+.cli-output .cli-line-link a:hover {
+    color: #21D0C3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .cli-input-row {
     display: flex;
     align-items: center;
