@@ -295,8 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 '  name:      Andres Bolivar',
                 '  role:      Engineer & Entrepreneur',
                 '  location:  Dubai, UAE',
-                '  origin:    Medellín, Colombia',
-                '  founded:   Dhaki — luxury smart automation',
+                '  origin:    Bogota, Colombia',
+                '  founded:   Dhaki — Smart and secure private environments',
             ],
             focus: [
                 '  current:   AI-assisted smart environments',
@@ -321,10 +321,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 '  — Systems engineering',
             ],
             contact: [
-                '  email:     andresbolivar@proton.me',
-                '  telegram:  t.me/audrum',
-                '  linkedin:  linkedin.com/in/anemboca',
-                '  github:    github.com/audrum',
+                { text: '  email:     andresbolivar@proton.me', href: 'mailto:andresbolivar@proton.me' },
+                { text: '  telegram:  t.me/audrum',             href: 'https://t.me/audrum' },
+                { text: '  linkedin:  linkedin.com/in/anemboca', href: 'https://linkedin.com/in/anemboca' },
+                { text: '  github:    github.com/audrum',        href: 'https://github.com/audrum' },
             ],
             help: [
                 '  available commands:',
@@ -360,17 +360,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function typeLines(lines, lineIndex) {
             if (lineIndex >= lines.length) return;
+            const entry = lines[lineIndex];
+            const text = typeof entry === 'string' ? entry : entry.text;
+            const href = typeof entry === 'object' && entry.href ? entry.href : null;
             const line = document.createElement('div');
             line.className = 'cli-line-out';
             cliOutput.appendChild(line);
             let charIndex = 0;
-            const text = lines[lineIndex];
             const interval = setInterval(() => {
-                line.textContent += text[charIndex];
+                line.textContent = text.slice(0, charIndex + 1);
                 charIndex++;
                 cliOutput.scrollTop = cliOutput.scrollHeight;
                 if (charIndex >= text.length) {
                     clearInterval(interval);
+                    if (href) {
+                        line.textContent = '';
+                        const a = document.createElement('a');
+                        a.href = href;
+                        a.target = '_blank';
+                        a.rel = 'noopener noreferrer';
+                        a.textContent = text;
+                        line.appendChild(a);
+                        line.classList.add('cli-line-link');
+                    }
                     typeLines(lines, lineIndex + 1);
                 }
             }, 10);
