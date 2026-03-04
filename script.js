@@ -465,6 +465,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Mobile nav hamburger
+    const navHamburger = document.getElementById('nav-hamburger');
+    const navEl = document.querySelector('.main-header nav');
+    if (navHamburger && navEl) {
+        navHamburger.addEventListener('click', () => {
+            const isOpen = navEl.classList.toggle('nav-open');
+            navHamburger.classList.toggle('open', isOpen);
+            navHamburger.setAttribute('aria-expanded', isOpen.toString());
+        });
+        // Close nav when a link is clicked
+        navEl.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navEl.classList.remove('nav-open');
+                navHamburger.classList.remove('open');
+                navHamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
     // Rotating tagline
     const rotatingWords = [
         'secure and private',
