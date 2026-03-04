@@ -4,22 +4,16 @@
 */
 
 :root {
-    /* Color Palette */
-    --color-bg: #FFFFFF;
-    --color-bg-secondary: #F8F9FA;
-    --color-text-primary: #1A1A1A;
-    /* Charcoal */
-    --color-text-secondary: #666666;
-    --color-accent: #00BFFF;
-    /* Vivid Electric Blue (Deep Sky Blue) */
-    --color-accent-light: #5CE1E6;
-    /* Bright Cyan/Teal */
-    --color-accent-dark: #0077b6;
-    --color-gold: #FFD700;
-    /* Brighter Gold */
+    /* Dark Palette */
+    --color-bg: #0A0D14;
+    --color-bg-secondary: #141A26;
+    --color-text-primary: #E8ECF0;
+    --color-text-secondary: #6B7A8D;
+    --color-accent: #21D0C3;
+    --color-border: rgba(255, 255, 255, 0.07);
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--color-accent) 0%, #0077b6 100%);
+    --gradient-primary: linear-gradient(135deg, #21D0C3 0%, #1B67C6 100%);
 
     /* Typography */
     --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
@@ -159,7 +153,7 @@ img {
 
 .btn-outline:hover {
     background: var(--color-text-primary);
-    color: white;
+    color: var(--color-bg);
 }
 
 /* Language Toggle */
@@ -223,10 +217,10 @@ img {
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 13, 20, 0.85);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--color-border);
     display: flex;
     align-items: center;
     transition: transform var(--transition-smooth);
@@ -306,7 +300,7 @@ img {
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     line-height: 1.1;
     margin-bottom: var(--spacing-md);
-    background: linear-gradient(to right, var(--color-text-primary), #4a4a4a);
+    background: linear-gradient(to right, var(--color-text-primary), var(--color-text-secondary));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -411,10 +405,10 @@ img {
 }
 
 .skill-card {
-    background: white;
+    background: var(--color-bg-secondary);
     padding: var(--spacing-md);
     border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
     transition: var(--transition-fast);
     height: 100%;
     display: flex;
@@ -461,11 +455,11 @@ img {
 }
 
 .cert-card {
-    background: white;
+    background: var(--color-bg-secondary);
     padding: var(--spacing-md);
     border-radius: 8px;
     text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
     transition: var(--transition-fast);
     position: relative;
     overflow: hidden;
@@ -519,7 +513,7 @@ img {
 
 .venture-card {
     background: var(--color-bg);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: var(--spacing-md);
     transition: all var(--transition-fast);

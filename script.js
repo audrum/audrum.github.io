@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.main-header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.05)';
+            header.style.background = 'rgba(10, 13, 20, 0.98)';
+            header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.4)';
         } else {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.background = 'rgba(10, 13, 20, 0.85)';
             header.style.boxShadow = 'none';
         }
     });
