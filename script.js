@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         const directionX = forceDirectionX * force * this.density;
                         const directionY = forceDirectionY * force * this.density;
 
-                        // Repel
-                        this.x -= directionX;
-                        this.y -= directionY;
+                        // Attract
+                        this.x += directionX * 0.8;
+                        this.y += directionY * 0.8;
                     } else {
                         // Return to normal movement flow if not impacted deeply, 
                         // but since these are free floating, we just let them drift.
@@ -114,10 +114,51 @@ document.addEventListener('DOMContentLoaded', () => {
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 191, 255, 0.8)'; // More visible Vivid Blue
+                ctx.fillStyle = 'rgba(33, 208, 195, 0.85)';
                 ctx.fill();
             }
         }
+
+        class BurstParticle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 3 + 3;
+                this.vx = Math.cos(angle) * speed;
+                this.vy = Math.sin(angle) * speed;
+                this.size = Math.random() * 1.5 + 1.5;
+                this.alpha = 1;
+                this.decay = 1 / (Math.random() * 20 + 20);
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vx *= 0.96;
+                this.vy *= 0.96;
+                this.alpha -= this.decay;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(33, 208, 195, ${this.alpha})`;
+                ctx.fill();
+            }
+
+            isDead() {
+                return this.alpha <= 0;
+            }
+        }
+
+        let burstParticles = [];
+
+        window.addEventListener('mousedown', (e) => {
+            for (let i = 0; i < 12; i++) {
+                burstParticles.push(new BurstParticle(e.x, e.y));
+            }
+        });
 
         function initParticles() {
             particles = [];
@@ -142,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (distance < 150) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 191, 255, ${0.4 - distance / 500})`; // Increased line opacity
+                        ctx.strokeStyle = `rgba(33, 208, 195, ${0.45 - distance / 500})`;
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
@@ -150,6 +191,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             }
+            // Burst particles
+            burstParticles = burstParticles.filter(bp => !bp.isDead());
+            burstParticles.forEach(bp => {
+                bp.update();
+                bp.draw();
+            });
+
             requestAnimationFrame(animate);
         }
 
