@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         const directionX = forceDirectionX * force * this.density;
                         const directionY = forceDirectionY * force * this.density;
 
-                        // Attract
-                        this.x += directionX * 0.8;
-                        this.y += directionY * 0.8;
+                        // Attract — gentle drift, no density scaling
+                        this.x += forceDirectionX * force * 1.2;
+                        this.y += forceDirectionY * force * 1.2;
                     } else {
                         // Return to normal movement flow if not impacted deeply, 
                         // but since these are free floating, we just let them drift.
@@ -124,19 +124,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.x = x;
                 this.y = y;
                 const angle = Math.random() * Math.PI * 2;
-                const speed = Math.random() * 3 + 3;
+                const speed = Math.random() * 5 + 4;
                 this.vx = Math.cos(angle) * speed;
                 this.vy = Math.sin(angle) * speed;
-                this.size = Math.random() * 1.5 + 1.5;
+                this.size = Math.random() * 2 + 2;
                 this.alpha = 1;
-                this.decay = 1 / (Math.random() * 20 + 20);
+                this.decay = 1 / (Math.random() * 30 + 45);
             }
 
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
-                this.vx *= 0.96;
-                this.vy *= 0.96;
+                this.vx *= 0.93;
+                this.vy *= 0.93;
                 this.alpha -= this.decay;
             }
 
