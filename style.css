@@ -314,6 +314,20 @@ img {
     max-width: 500px;
 }
 
+.rotating-word {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+    font-weight: 600;
+}
+
+.rotating-word.fade-out {
+    opacity: 0;
+}
+
 .hero-image-wrapper {
     position: relative;
     width: 100%;
