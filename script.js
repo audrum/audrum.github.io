@@ -176,11 +176,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 particles[i].update();
                 particles[i].draw();
 
-                for (let j = i; j < particles.length; j++) {
+                for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
+                    if (Math.abs(dx) > 150) continue;
                     const dy = particles[i].y - particles[j].y;
+                    if (Math.abs(dy) > 150) continue;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-
                     if (distance < 150) {
                         ctx.beginPath();
                         ctx.strokeStyle = `rgba(33, 208, 195, ${0.45 - distance / 500})`;
@@ -205,45 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
         resize();
         animate();
     }
-
-    // --- Content Protection ---
-
-    // 1. Disable Right-Click Context Menu
-    document.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-        return false;
-    });
-
-    // 2. Disable Image Dragging
-    document.addEventListener('dragstart', (e) => {
-        if (e.target.nodeName === 'IMG') {
-            e.preventDefault();
-            return false;
-        }
-    });
-
-    // 3. Disable Developer Tools Shortcuts and Source View
-    document.addEventListener('keydown', (e) => {
-        // Prevent F12
-        if (e.key === 'F12') {
-            e.preventDefault();
-            return false;
-        }
-
-        // Prevent Ctrl+Shift+I (DevTools), Ctrl+Shift+J (Console), Ctrl+Shift+C (Inspect), Ctrl+U (View Source)
-        // Mac: Cmd+Option+I, Cmd+Option+J, Cmd+Option+C, Cmd+Option+U (Chrome/Safari mostly use Option instead of Shift, but we catch generic combinations)
-        if (e.metaKey || e.ctrlKey) {
-            switch (e.key.toLowerCase()) {
-                case 'i': // Inspect
-                case 'j': // Console
-                case 'c': // Inspect Element
-                case 'u': // View Source
-                case 's': // Save Page
-                    e.preventDefault();
-                    return false;
-            }
-        }
-    });
 
     // --- Language Switcher ---
     window.switchLang = function (lang) {
@@ -307,11 +269,17 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             philosophy: [
                 '  "I am driven by curiosity — not as a habit, but as a system.',
-                '  I am a hacker by mindset. Not to bypass rules,',
-                '  but to understand systems deeply enough to redesign them.',
-                '  Technology is not an accessory. It is an extension of human capability.',
-                '  If something can be better, it should be.',
-                '  If something can be smarter, it must be."',
+                '   If something cannot be explored, tested, or improved,',
+                '   it does not hold my attention for long.',
+                '  ',
+                '   I am a hacker by mindset. Not to bypass rules,',
+                '   but to understand systems deeply enough to redesign them.',
+                '  ',
+                '   I build because ideas without execution are incomplete.',
+                '   Iteration is not failure. Stagnation is.',
+                '  ',
+                '   If something can be better, it should be.',
+                '   If something can be smarter, it must be."',
             ],
             systems: [
                 '  — Smart home & IoT architecture',
@@ -338,6 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 '  exit        — close the terminal',
             ],
         };
+
+        const cmdHistory = []; let historyIndex = -1;
 
         function openCLI() {
             cliOverlay.classList.add('cli-open');
@@ -447,10 +417,31 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter') {
                 const val = cliInput.value;
                 cliInput.value = '';
+                if (val.trim()) {
+                    cmdHistory.push(val.trim());
+                    historyIndex = -1;
+                }
                 handleCommand(val);
             }
             if (e.key === 'Escape') {
                 closeCLI();
+            }
+            if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (historyIndex < cmdHistory.length - 1) {
+                    historyIndex++;
+                    cliInput.value = cmdHistory[cmdHistory.length - 1 - historyIndex];
+                }
+            }
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (historyIndex > 0) {
+                    historyIndex--;
+                    cliInput.value = cmdHistory[cmdHistory.length - 1 - historyIndex];
+                } else if (historyIndex === 0) {
+                    historyIndex = -1;
+                    cliInput.value = '';
+                }
             }
         });
 
