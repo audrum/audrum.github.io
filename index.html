@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <!-- Ionicons for minimal icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -274,6 +275,21 @@
             </div>
         </div>
     </footer>
+
+    <!-- CLI Terminal Overlay -->
+    <div id="cli-overlay" aria-hidden="true">
+        <div class="cli-panel" role="dialog" aria-label="Terminal">
+            <div class="cli-header">
+                <span class="cli-title">andresbolivar.me — terminal</span>
+                <button class="cli-close" id="cli-close" aria-label="Close terminal">&times;</button>
+            </div>
+            <div id="cli-output" class="cli-output"></div>
+            <div class="cli-input-row">
+                <span class="cli-prompt">user@andresbolivar:~$&nbsp;</span>
+                <input type="text" id="cli-input" class="cli-input" autocomplete="off" spellcheck="false" aria-label="Terminal input" />
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
