@@ -333,6 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '  philosophy  — how I think',
                 '  systems     — what I build',
                 '  contact     — how to reach me',
+                '  vcard       — download contact card',
                 '  clear       — clear the terminal',
                 '  exit        — close the terminal',
             ],
@@ -404,6 +405,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            if (cmd === 'vcard') {
+                appendLine('  downloading Andres Bolivar.vcf...', 'cli-line-out');
+                const a = document.createElement('a');
+                a.href = 'assets/contact.vcf';
+                a.download = 'Andres Bolivar.vcf';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                return;
+            }
+
             const lines = CLI_RESPONSES[cmd];
             if (lines) {
                 typeLines(lines, 0);
@@ -444,6 +456,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (cliCloseBtn) {
             cliCloseBtn.addEventListener('click', closeCLI);
+        }
+
+        const cliFab = document.getElementById('cli-fab');
+        if (cliFab) {
+            cliFab.addEventListener('click', () => {
+                if (cliOverlay.classList.contains('cli-open')) {
+                    closeCLI();
+                } else {
+                    openCLI();
+                }
+            });
         }
 
         cliOverlay.addEventListener('click', (e) => {
