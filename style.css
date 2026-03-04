@@ -1031,3 +1031,18 @@ img {
         font-size: 0.95rem;
     }
 }
+
+/* Page fade transition */
+body {
+    animation: page-fade-in 0.4s ease forwards;
+}
+
+@keyframes page-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+body.page-fade-out {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
