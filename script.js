@@ -233,5 +233,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (langParam && (langParam === 'en' || langParam === 'es')) {
         switchLang(langParam);
     }
+
+    // Rotating tagline
+    const rotatingWords = [
+        'secure and private',
+        'AI-assisted',
+        'automation-first',
+        'resilient by design',
+        'human-approved',
+        'low-friction',
+        'production-grade',
+        'intelligently autonomous'
+    ];
+    const rotatingEl = document.getElementById('rotating-word');
+    if (rotatingEl) {
+        let rotatingIndex = 0;
+        setInterval(() => {
+            rotatingEl.classList.add('fade-out');
+            setTimeout(() => {
+                rotatingIndex = (rotatingIndex + 1) % rotatingWords.length;
+                rotatingEl.textContent = rotatingWords[rotatingIndex];
+                rotatingEl.classList.remove('fade-out');
+            }, 300);
+        }, 2500);
+    }
 });
 
