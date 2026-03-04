@@ -570,6 +570,24 @@ img {
     margin-bottom: var(--spacing-xs);
 }
 
+.venture-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.venture-meta span {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--color-border);
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
 .venture-card p {
     color: var(--color-text-secondary);
     font-size: 0.95rem;
