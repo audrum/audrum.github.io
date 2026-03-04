@@ -775,6 +775,38 @@ img {
     }
 }
 
+/* ===================== Mobile CLI FAB ===================== */
+#cli-fab {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9998;
+    background: #0A0D14;
+    color: #21D0C3;
+    border: 1px solid rgba(33, 208, 195, 0.35);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    box-shadow: 0 0 20px rgba(33, 208, 195, 0.1);
+    transition: all var(--transition-fast);
+}
+
+#cli-fab:hover {
+    background: rgba(33, 208, 195, 0.08);
+    box-shadow: 0 0 30px rgba(33, 208, 195, 0.2);
+}
+
+@media (max-width: 768px) {
+    #cli-fab {
+        display: block;
+    }
+}
+
 /* ===================== CLI Terminal Overlay ===================== */
 #cli-overlay {
     position: fixed;
