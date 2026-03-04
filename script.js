@@ -419,6 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cliInput.value = '';
                 if (val.trim()) {
                     cmdHistory.push(val.trim());
+                    if (cmdHistory.length > 100) cmdHistory.shift();
                     historyIndex = -1;
                 }
                 handleCommand(val);
@@ -488,7 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href]').forEach(link => {
         const href = link.getAttribute('href');
         // Only intercept internal page navigations (not anchors, not external, not mailto)
-        if (!href || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('http') || href.startsWith('//')) return;
+        if (!href || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('http') || href.startsWith('//') || href.startsWith('javascript')) return;
         if (href.endsWith('.vcf')) return;
         link.addEventListener('click', (e) => {
             e.preventDefault();
