@@ -244,8 +244,8 @@ img {
 
 .logo img {
     height: 32px;
-    /* Adjust based on logo aspect ratio */
     width: auto;
+    filter: brightness(0) invert(1);
 }
 
 .nav-links {
