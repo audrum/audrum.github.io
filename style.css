@@ -355,7 +355,6 @@ img {
 
 .about-image img {
     border-radius: 8px;
-    filter: grayscale(100%);
     opacity: 0.9;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     /* Subtle drop shadow */
@@ -365,7 +364,6 @@ img {
 }
 
 .about-image img:hover {
-    filter: grayscale(0%);
     opacity: 1;
     transform: translateY(-5px);
     box-shadow: 0 25px 50px rgba(0, 191, 255, 0.2);
