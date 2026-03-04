@@ -282,6 +282,163 @@ document.addEventListener('DOMContentLoaded', () => {
         switchLang(langParam);
     }
 
+    // ===================== CLI Terminal =====================
+    const cliOverlay = document.getElementById('cli-overlay');
+    const cliInput = document.getElementById('cli-input');
+    const cliOutput = document.getElementById('cli-output');
+    const cliCloseBtn = document.getElementById('cli-close');
+
+    if (cliOverlay && cliInput && cliOutput) {
+
+        const CLI_RESPONSES = {
+            about: [
+                '  name:      Andres Bolivar',
+                '  role:      Engineer & Entrepreneur',
+                '  location:  Dubai, UAE',
+                '  origin:    Medellín, Colombia',
+                '  founded:   Dhaki — luxury smart automation',
+            ],
+            focus: [
+                '  current:   AI-assisted smart environments',
+                '  active:    Dhaki — intelligent spaces platform',
+                '  exploring: autonomous home robotics',
+                '             edge AI deployment',
+                '             privacy-first infrastructure',
+            ],
+            philosophy: [
+                '  "I am driven by curiosity — not as a habit, but as a system.',
+                '  I am a hacker by mindset. Not to bypass rules,',
+                '  but to understand systems deeply enough to redesign them.',
+                '  Technology is not an accessory. It is an extension of human capability.',
+                '  If something can be better, it should be.',
+                '  If something can be smarter, it must be."',
+            ],
+            systems: [
+                '  — Smart home & IoT architecture',
+                '  — AI & automation pipelines',
+                '  — Cloud infrastructure & DevOps',
+                '  — Cybersecurity & hardening',
+                '  — Systems engineering',
+            ],
+            contact: [
+                '  email:     andresbolivar@proton.me',
+                '  telegram:  t.me/audrum',
+                '  linkedin:  linkedin.com/in/anemboca',
+                '  github:    github.com/audrum',
+            ],
+            help: [
+                '  available commands:',
+                '  about       — who I am',
+                '  focus       — what I\'m working on',
+                '  philosophy  — how I think',
+                '  systems     — what I build',
+                '  contact     — how to reach me',
+                '  clear       — clear the terminal',
+                '  exit        — close the terminal',
+            ],
+        };
+
+        function openCLI() {
+            cliOverlay.classList.add('cli-open');
+            cliOverlay.setAttribute('aria-hidden', 'false');
+            setTimeout(() => cliInput.focus(), 50);
+        }
+
+        function closeCLI() {
+            cliOverlay.classList.remove('cli-open');
+            cliOverlay.setAttribute('aria-hidden', 'true');
+            cliInput.value = '';
+        }
+
+        function appendLine(text, className) {
+            const line = document.createElement('div');
+            line.className = className;
+            line.textContent = text;
+            cliOutput.appendChild(line);
+            cliOutput.scrollTop = cliOutput.scrollHeight;
+        }
+
+        function typeLines(lines, lineIndex) {
+            if (lineIndex >= lines.length) return;
+            const line = document.createElement('div');
+            line.className = 'cli-line-out';
+            cliOutput.appendChild(line);
+            let charIndex = 0;
+            const text = lines[lineIndex];
+            const interval = setInterval(() => {
+                line.textContent += text[charIndex];
+                charIndex++;
+                cliOutput.scrollTop = cliOutput.scrollHeight;
+                if (charIndex >= text.length) {
+                    clearInterval(interval);
+                    typeLines(lines, lineIndex + 1);
+                }
+            }, 10);
+        }
+
+        function handleCommand(raw) {
+            const cmd = raw.trim().toLowerCase();
+            if (!cmd) return;
+
+            appendLine(raw.trim(), 'cli-line-cmd');
+
+            if (cmd === 'clear') {
+                while (cliOutput.firstChild) cliOutput.removeChild(cliOutput.firstChild);
+                return;
+            }
+
+            if (cmd === 'exit') {
+                closeCLI();
+                return;
+            }
+
+            const lines = CLI_RESPONSES[cmd];
+            if (lines) {
+                typeLines(lines, 0);
+            } else {
+                appendLine('bash: ' + cmd + ': command not found', 'cli-line-err');
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            const tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+            if (tag === 'input' || tag === 'textarea') return;
+
+            if (e.key === '/') {
+                e.preventDefault();
+                if (cliOverlay.classList.contains('cli-open')) {
+                    closeCLI();
+                } else {
+                    openCLI();
+                }
+                return;
+            }
+
+            if (e.key === 'Escape' && cliOverlay.classList.contains('cli-open')) {
+                closeCLI();
+            }
+        });
+
+        cliInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const val = cliInput.value;
+                cliInput.value = '';
+                handleCommand(val);
+            }
+            if (e.key === 'Escape') {
+                closeCLI();
+            }
+        });
+
+        if (cliCloseBtn) {
+            cliCloseBtn.addEventListener('click', closeCLI);
+        }
+
+        cliOverlay.addEventListener('click', (e) => {
+            if (e.target === cliOverlay) closeCLI();
+        });
+    }
+
     // Rotating tagline
     const rotatingWords = [
         'secure and private',
