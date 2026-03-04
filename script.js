@@ -484,6 +484,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Page fade transition
+    document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        // Only intercept internal page navigations (not anchors, not external, not mailto)
+        if (!href || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('http') || href.startsWith('//')) return;
+        if (href.endsWith('.vcf')) return;
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.classList.add('page-fade-out');
+            setTimeout(() => {
+                window.location.href = href;
+            }, 250);
+        });
+    });
+
     // Rotating tagline
     const rotatingWords = [
         'secure and private',
