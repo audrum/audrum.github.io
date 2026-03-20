@@ -24,6 +24,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
     revealElements.forEach(el => observer.observe(el));
 
+    // Stat counter animation
+    function animateCounter(el) {
+        const raw = el.textContent.trim();
+        const hasSuffix = raw.endsWith('+');
+        const target = parseInt(raw);
+        if (isNaN(target)) return;
+        const duration = 1500;
+        let startTime = null;
+
+        el.textContent = '0' + (hasSuffix ? '+' : '');
+
+        function tick(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            el.textContent = Math.round(eased * target) + (hasSuffix ? '+' : '');
+            if (progress < 1) requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.about-stat-value').forEach(animateCounter);
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const statsEl = document.querySelector('.about-stats');
+    if (statsEl) statsObserver.observe(statsEl);
+
     // Optional: Add smooth scroll for safely handling older browsers or complex anchors if needed
     // (CSS scroll-behavior: smooth is already active, but this adds a safety layer if we wanted custom easing)
 
@@ -39,165 +74,75 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Background Canvas Animation (Tech Particle Network)
+    // Background Canvas Animation (Dot Grid Pulse)
     const canvas = document.getElementById('bg-canvas');
     if (canvas) {
+        // Respect reduced-motion preference — skip animation entirely
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            canvas.style.display = 'none';
+        } else {
+
         const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
+        let width, height, dots = [];
+        let animationPaused = false;
+        let time = 0;
 
-        // Resize Canvas
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            initParticles();
-        }
+        const isMobile = window.innerWidth <= 768;
+        const SPACING    = isMobile ? 48 : 36;
+        const DOT_RADIUS = 1;
+        const BASE_ALPHA = 0.08;
+        const WAVE_ALPHA = 0.22;
 
-        let mouse = { x: null, y: null, radius: 200 };
-
-        window.addEventListener('mousemove', (event) => {
-            mouse.x = event.x;
-            mouse.y = event.y;
+        // Pause when tab is hidden to save battery
+        document.addEventListener('visibilitychange', () => {
+            animationPaused = document.hidden;
         });
 
-        // Handle mouse leaving window
-        window.addEventListener('mouseout', () => {
-            mouse.x = null;
-            mouse.y = null;
+        // Subtle mouse influence on wave phase
+        let mouse = { nx: 0.5, ny: 0.5 };
+        window.addEventListener('mousemove', (e) => {
+            mouse.nx = e.clientX / width;
+            mouse.ny = e.clientY / height;
         });
 
-        class Particle {
-            constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5; // Slow movement
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2 + 1;
-                this.baseX = this.x;
-                this.baseY = this.y;
-                this.density = (Math.random() * 30) + 1;
-            }
-
-            update() {
-                // Mouse Interaction
-                if (mouse.x != null) {
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < mouse.radius) {
-                        const forceDirectionX = dx / distance;
-                        const forceDirectionY = dy / distance;
-                        const maxDistance = mouse.radius;
-                        const force = (maxDistance - distance) / maxDistance;
-                        const directionX = forceDirectionX * force * this.density;
-                        const directionY = forceDirectionY * force * this.density;
-
-                        // Attract — gentle drift, no density scaling
-                        this.x += forceDirectionX * force * 1.2;
-                        this.y += forceDirectionY * force * 1.2;
-                    } else {
-                        // Return to normal movement flow if not impacted deeply, 
-                        // but since these are free floating, we just let them drift.
-                        // Optionally we could have them return to a 'base' position if it was a structured grid.
-                    }
+        function buildGrid() {
+            dots = [];
+            const cols = Math.ceil(width  / SPACING) + 1;
+            const rows = Math.ceil(height / SPACING) + 1;
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    dots.push({ x: c * SPACING, y: r * SPACING });
                 }
-
-                this.x += this.vx;
-                this.y += this.vy;
-
-                // Bounce off edges
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(33, 208, 195, 0.85)';
-                ctx.fill();
             }
         }
 
-        class BurstParticle {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                const angle = Math.random() * Math.PI * 2;
-                const speed = Math.random() * 5 + 4;
-                this.vx = Math.cos(angle) * speed;
-                this.vy = Math.sin(angle) * speed;
-                this.size = Math.random() * 2 + 2;
-                this.alpha = 1;
-                this.decay = 1 / (Math.random() * 30 + 45);
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                this.vx *= 0.93;
-                this.vy *= 0.93;
-                this.alpha -= this.decay;
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(33, 208, 195, ${this.alpha})`;
-                ctx.fill();
-            }
-
-            isDead() {
-                return this.alpha <= 0;
-            }
-        }
-
-        let burstParticles = [];
-
-        window.addEventListener('mousedown', (e) => {
-            for (let i = 0; i < 12; i++) {
-                burstParticles.push(new BurstParticle(e.x, e.y));
-            }
-        });
-
-        function initParticles() {
-            particles = [];
-            const particleCount = Math.min(Math.floor(window.innerWidth / 10), 150); // Increased count
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
+        function resize() {
+            width  = canvas.width  = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            buildGrid();
         }
 
         function animate() {
-            ctx.clearRect(0, 0, width, height);
+            if (!animationPaused) {
+                ctx.clearRect(0, 0, width, height);
+                time += 0.006;
 
-            // Draw connections
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
+                // Two overlapping plane waves at different angles + subtle mouse shift
+                const phaseShiftX = mouse.nx * Math.PI * 0.5;
+                const phaseShiftY = mouse.ny * Math.PI * 0.5;
 
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    if (Math.abs(dx) > 150) continue;
-                    const dy = particles[i].y - particles[j].y;
-                    if (Math.abs(dy) > 150) continue;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 150) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(33, 208, 195, ${0.45 - distance / 500})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
+                for (let i = 0; i < dots.length; i++) {
+                    const { x, y } = dots[i];
+                    const wave1 = Math.sin(x * 0.030 + y * 0.018 - time       + phaseShiftX);
+                    const wave2 = Math.sin(x * 0.016 - y * 0.030 + time * 0.6 + phaseShiftY);
+                    const alpha = BASE_ALPHA + WAVE_ALPHA * ((wave1 + wave2) / 2 + 1) / 2;
+
+                    ctx.beginPath();
+                    ctx.arc(x, y, DOT_RADIUS, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(33, 208, 195, ${alpha.toFixed(3)})`;
+                    ctx.fill();
                 }
             }
-            // Burst particles
-            burstParticles = burstParticles.filter(bp => !bp.isDead());
-            burstParticles.forEach(bp => {
-                bp.update();
-                bp.draw();
-            });
 
             requestAnimationFrame(animate);
         }
@@ -205,6 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', resize);
         resize();
         animate();
+
+        } // end prefers-reduced-motion else
     }
 
     // --- Language Switcher ---

@@ -8,7 +8,7 @@
     --color-bg: #0A0D14;
     --color-bg-secondary: #141A26;
     --color-text-primary: #E8ECF0;
-    --color-text-secondary: #6B7A8D;
+    --color-text-secondary: #8A97A8;
     --color-accent: #21D0C3;
     --color-border: rgba(255, 255, 255, 0.07);
 
@@ -71,6 +71,17 @@ textarea {
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
+}
+
+/* Keyboard focus styles — only shown when navigating via keyboard, invisible on mouse click */
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 html {
@@ -240,6 +251,7 @@ img {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .logo img {
@@ -380,10 +392,67 @@ img {
     display: block;
 }
 
+.hero-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 4px 12px;
+    letter-spacing: 0.02em;
+}
+
+.hero-badge ion-icon {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+}
+
 .about-text p {
     margin-bottom: var(--spacing-sm);
     color: var(--color-text-secondary);
     font-size: 1.05rem;
+}
+
+.about-stats {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.about-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.about-stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, var(--color-accent), #1B67C6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about-stat-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
 }
 
 .stats-grid {
@@ -522,6 +591,7 @@ img {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
+    justify-content: center;
 }
 
 .venture-card {
@@ -626,16 +696,12 @@ img {
     align-items: center;
     justify-content: center;
     width: 56px;
-    /* Increased from 44px */
     height: 56px;
-    /* Increased from 44px */
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     font-size: 1.5rem;
-    /* Increased from 1.2rem */
     transition: all var(--transition-fast);
     color: white;
-    /* Default white icon */
 }
 
 /* Specific Brand Colors on Hover */
@@ -709,6 +775,32 @@ img {
     display: none;
     /* Hidden by default on desktop */
     margin-top: var(--spacing-md);
+}
+
+/* CLI keyboard hint — desktop only */
+.cli-hint {
+    margin-top: var(--spacing-md);
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+    opacity: 0.5;
+    letter-spacing: 0.04em;
+}
+
+.cli-hint kbd {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 1px 6px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-accent);
+    background: rgba(33, 208, 195, 0.05);
+}
+
+@media (max-width: 768px) {
+    .cli-hint {
+        display: none;
+    }
 }
 
 .btn-save-contact {
@@ -1001,15 +1093,20 @@ img {
 @media (max-width: 768px) {
     .nav-hamburger {
         display: flex;
+        order: 1;
+        flex-shrink: 0;
     }
 
     .nav-container {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0;
+        align-items: center;
+        justify-content: space-between;
     }
 
     nav {
+        order: 2;
         width: 100%;
         max-height: 0;
         overflow: hidden;

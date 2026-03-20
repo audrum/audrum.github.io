@@ -63,6 +63,9 @@
         <div class="container hero-grid">
             <div class="hero-content reveal-on-scroll">
                 <span class="section-title">Engineer & Entrepreneur</span>
+                <div class="hero-meta">
+                    <span class="hero-badge"><ion-icon name="location-outline"></ion-icon> Dubai, UAE</span>
+                </div>
                 <h1>Engineering refined living.</h1>
                 <p class="hero-subtitle">I build <span class="rotating-word" id="rotating-word">secure and private</span> systems for real-world environments.</p>
                 <div class="hero-actions">
@@ -74,6 +77,7 @@
                         <ion-icon name="person-add-outline"></ion-icon> Save Contact
                     </a>
                 </div>
+                <p class="cli-hint">press <kbd>/</kbd> to open terminal</p>
             </div>
             <div class="hero-image-wrapper reveal-on-scroll">
                 <img src="assets/hero-photo.jpg" alt="Andres Bolivar — Engineer and Entrepreneur based in Dubai"
@@ -100,6 +104,20 @@
                 </p>
                 <p>A commitment to continuous learning and thoughtful design guides my work. The aim is to build
                     solutions that are functional, meaningful, and impactful.</p>
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <span class="about-stat-value">15+</span>
+                        <span class="about-stat-label">Years of Experience</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="about-stat-value">4</span>
+                        <span class="about-stat-label">Countries</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="about-stat-value">1</span>
+                        <span class="about-stat-label">Venture Founded</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -110,7 +128,7 @@
             <div class="text-center reveal-on-scroll" style="max-width: 700px; margin: 0 auto var(--spacing-lg);">
                 <span class="section-title">Ventures & Projects</span>
                 <h2>Building the Future</h2>
-                <p style="color: var(--color-text-secondary);">A collection of my work in smart automation, luxury tech,
+                <p style="color: var(--color-text-secondary);">A collection of my work in smart automation, cybersecurity,
                     and software engineering.</p>
             </div>
 
@@ -165,6 +183,44 @@
                         for peak physical and mental performance.</p>
                 </article> -->
 
+                <!-- GenPWD Card -->
+                <article class="venture-card reveal-on-scroll">
+                    <div class="venture-header">
+                        <div class="venture-icon">
+                            <ion-icon name="key-outline"></ion-icon>
+                        </div>
+                        <span class="venture-tag">Creator</span>
+                    </div>
+                    <h3>GenPWD</h3>
+                    <div class="venture-meta">
+                        <span>Creator</span>
+                        <span>Web + CLI</span>
+                        <span>Security</span>
+                    </div>
+                    <p>A secure, random password generator available via browser or directly from the terminal with a single cURL command. No tracking, no storage. Just entropy.</p>
+                    <a href="https://genpwd.sh" target="_blank" class="btn-link"
+                        style="color: var(--color-accent); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 4px;">
+                        Visit GenPWD <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </article>
+
+                <!-- HNWI Cybersecurity Card -->
+                <article class="venture-card reveal-on-scroll">
+                    <div class="venture-header">
+                        <div class="venture-icon">
+                            <ion-icon name="shield-checkmark-outline"></ion-icon>
+                        </div>
+                        <span class="venture-tag">In Development</span>
+                    </div>
+                    <h3>HNWI Private Cybersecurity</h3>
+                    <div class="venture-meta">
+                        <span>Founder</span>
+                        <span>Private</span>
+                        <span>Cybersecurity</span>
+                    </div>
+                    <p>Discreet, high-touch cybersecurity services for high net worth individuals. Protecting digital identities, devices, and communications with the precision and confidentiality each client demands.</p>
+                </article>
+
                 <!-- More Coming Soon Card -->
                 <article class="venture-card reveal-on-scroll"
                     style="border: 1px dashed var(--color-text-secondary); background: transparent; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 250px;">
@@ -197,8 +253,7 @@
                         <ion-icon name="aperture-outline"></ion-icon>
                     </div>
                     <h3>AI & Automation</h3>
-                    <p>Building intelligent systems that automate routines, surface insights, and reduce friction in
-                        daily life.</p>
+                    <p>Teaching machines to do the boring parts, so humans can focus on what actually matters.</p>
                 </article>
 
                 <!-- 2. Smart Home & IoT -->
@@ -207,8 +262,7 @@
                         <ion-icon name="home-outline"></ion-icon>
                     </div>
                     <h3>Smart Home & IoT Architecture</h3>
-                    <p>Designing connected environments that integrate devices, sensors, and platforms into a single,
-                        intuitive experience.</p>
+                    <p>Turning any space into something that thinks. Every sensor, switch, and screen working as one.</p>
                 </article>
 
                 <!-- 3. Systems Engineering -->
@@ -217,8 +271,7 @@
                         <ion-icon name="layers-outline"></ion-icon>
                     </div>
                     <h3>Systems Engineering</h3>
-                    <p>Structuring complex technical problems into clear, scalable architectures with reliability as a
-                        first principle.</p>
+                    <p>Complexity is inevitable. Chaos is not. I design systems that hold their shape under pressure.</p>
                 </article>
 
                 <!-- 4. Cloud & Infrastructure -->
@@ -227,8 +280,7 @@
                         <ion-icon name="cloud-outline"></ion-icon>
                     </div>
                     <h3>Cloud & Infrastructure</h3>
-                    <p>Leveraging modern cloud platforms and services to deliver secure, resilient, and flexible
-                        solutions.</p>
+                    <p>The foundation nobody sees but everyone depends on. Built to scale, designed to survive.</p>
                 </article>
 
                 <!-- 5. Cybersecurity -->
@@ -237,8 +289,7 @@
                         <ion-icon name="shield-checkmark-outline"></ion-icon>
                     </div>
                     <h3>Cybersecurity</h3>
-                    <p>Applying advanced security practices to protect environments end to end. Experience spans
-                        penetration testing, threat detection, and defensive hardening.</p>
+                    <p>I think like an attacker to defend like a professional. Security is not a feature. It's a foundation.</p>
                 </article>
 
                 <!-- 6. Technical Leadership -->
@@ -247,8 +298,7 @@
                         <ion-icon name="compass-outline"></ion-icon>
                     </div>
                     <h3>Technical Leadership</h3>
-                    <p>Shaping vision, setting standards, and aligning people, process, and technology around meaningful
-                        outcomes.</p>
+                    <p>Strategy without execution is just wishful thinking. I bridge the gap between vision and shipped product.</p>
                 </article>
             </div>
         </div>
@@ -261,7 +311,7 @@
                 <div>
                     <h2>Let's build something<br>extraordinary.</h2>
                     <p style="color: rgba(255,255,255,0.7); max-width: 400px; margin-bottom: var(--spacing-md);">
-                        Always open to discussing new ideas, partnerships, or just chatting about the future of tech.
+                        Open to new ventures, partnerships, and meaningful conversations. If you have an idea worth building, let's talk.
                     </p>
                     <a href="mailto:andresbolivar@proton.me" class="btn btn-primary"
                         style="background: var(--color-text-primary); color: var(--color-bg);">Email Me</a>
@@ -275,16 +325,12 @@
                         <!-- Direct Contact Badges -->
                         <!-- <a href="https://wa.me/971525673553" target="_blank" class="social-link whatsapp"
                             title="WhatsApp"><ion-icon name="logo-whatsapp"></ion-icon></a> -->
-                        <a href="https://t.me/audrum" target="_blank" class="social-link telegram"
-                            title="Telegram"><ion-icon name="paper-plane-outline"></ion-icon></a>
-                        <a href="https://instagram.com/audrum" target="_blank" class="social-link instagram"
-                            title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="https://t.me/audrum" target="_blank" class="social-link telegram" title="Telegram"><ion-icon name="paper-plane-outline"></ion-icon></a>
+                        <a href="https://instagram.com/audrum" target="_blank" class="social-link instagram" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
 
                         <!-- Professional -->
-                        <a href="https://linkedin.com/in/anemboca" target="_blank" class="social-link linkedin"
-                            title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
-                        <a href="https://github.com/audrum" target="_blank" class="social-link github"
-                            title="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+                        <a href="https://linkedin.com/in/anemboca" target="_blank" class="social-link linkedin" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+                        <a href="https://github.com/audrum" target="_blank" class="social-link github" title="GitHub"><ion-icon name="logo-github"></ion-icon></a>
                     </div>
                 </div>
             </div>
