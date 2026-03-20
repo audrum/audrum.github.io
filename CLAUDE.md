@@ -91,6 +91,3 @@ Single `DOMContentLoaded` listener handles:
 - Commands are defined in `CLI_RESPONSES` object in `script.js` — update there to change CLI content
 - `clear` uses DOM `removeChild` loop (not `innerHTML = ''`)
 
-## Branch Notes
-
-Branch `redesign/dark-editorial` contains an older dark editorial redesign with different class names (`.reveal`/`.visible`, `.btn-gradient`/`.btn-ghost`, `.nav`/`#nav`). Do not mix conventions between branches.
