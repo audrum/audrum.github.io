@@ -29,6 +29,22 @@ Two pages share a single CSS/JS pair:
 | Font | Inter 300–700 + JetBrains Mono 400–500 via Google Fonts CDN |
 | Icons | Ionicons 7.1 via unpkg CDN |
 
+## Social Preview (Open Graph)
+
+Both `index.html` and `philosophy.html` carry a full `og:*` / `twitter:*` block in `<head>`, plus `<link rel="canonical">`. Rules:
+
+- The card image is `assets/og.jpg` (1200×630, JPEG ~115 KB) and must be referenced **absolutely** (`https://andresbolivar.me/assets/og.jpg`) — crawlers do not resolve relative URLs.
+- Both pages share one card; only `og:url`, `og:title` and the descriptions differ per page.
+- The card is generated from `docs/og-card.html` by screenshotting it in headless Chrome at 1200×630, then converting to JPEG. Edit that file and re-shoot rather than retouching the image:
+  ```bash
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu \
+    --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 \
+    --virtual-time-budget=7000 --screenshot=og.png docs/og-card.html
+  sips -s format jpeg -s formatOptions 86 og.png --out assets/og.jpg
+  ```
+- Do **not** point `og:image` at `assets/hero-photo.jpg` — it is a 3024×4032 portrait and social platforms crop it to an unusable strip.
+- Link previews are cached by each platform; after changing the card, re-scrape via the platform's debugger (e.g. Facebook Sharing Debugger, LinkedIn Post Inspector).
+
 ## Page Sections (index.html)
 
 Hero → About → Ventures → Skills → Contact/Footer
