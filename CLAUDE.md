@@ -62,7 +62,9 @@ Hero → About → Ventures → Skills → Contact/Footer
 
 ### Ventures
 - Grid: `.ventures-grid` — `auto-fill, minmax(350px, 1fr)`, `justify-content: center`
-- Cards: Dhaki, GenPWD, HNWI Private Cybersecurity, More to Come
+- Cards: Dhaki, hush.md, GenPWD, Private AI Agent Stack, HNWI Private Cybersecurity, More to Come
+- Logos: `assets/hush-logo.svg` is the official hush.md mark (`hush-md/packages/web/public/favicon.svg`) with its dark-scheme colours fixed, because the original switches on the viewer's `prefers-color-scheme` and would go near-black on this always-dark card. `assets/genpwd-logo.png` is `genpwd-sh/static/favicon.png` resized to 160px. Re-copy from those repos if either logo changes.
+- Hermes and MemPalace are third-party open source: the agent-stack card describes his integration and security work, never authorship, and has no link
 
 ### Skills
 - 6 cards in `.skills-grid` — custom copy, no generic descriptions

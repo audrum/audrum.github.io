@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- hush.md logo (from hush-md/packages/web/public/favicon.svg), dark-scheme colours fixed for this dark site -->
+  <path d="M7 9.5 L13.5 16 L7 22.5" fill="none" stroke="#eae6dd" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="18.5" cy="21.9" r="1.95" fill="#eae6dd"/>
+  <circle cx="23.5" cy="21.9" r="1.95" fill="#eae6dd" opacity="0.45"/>
+  <circle cx="28.2" cy="21.9" r="1.95" fill="#7c6aae"/>
+</svg>
